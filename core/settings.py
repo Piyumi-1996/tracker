@@ -12,8 +12,11 @@ load_dotenv(BASE_DIR / ".env")
 
 # --- Core ---
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-key")
-DEBUG = os.getenv("DEBUG", "True").lower() == "true"
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+DEBUG = True
+ALLOWED_HOSTS = ["*"]
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 
 # --- Apps ---
 INSTALLED_APPS = [
